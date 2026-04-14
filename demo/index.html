@@ -6,13 +6,12 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Document Intelligence RAG</title>
           <link rel="stylesheet" href="./styles.css">
-          <style>:root { --accent: #e76f51; }</style>
         </head>
-        <body>
-          <div class="page">
+        <body class="surface-mist">
+          <div class="page layout-horizon eyebrow-solid headline-compact modules-3 hero-align-left">
             <section class="hero">
               <div class="panel hero-copy">
-                <span class="eyebrow">Grounded Retrieval App</span>
+                <span class="eyebrow" data-health>Grounded Navigator</span>
                 <h1 id="project-title">Document Intelligence RAG</h1>
                 <p id="project-summary" class="lead">Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.</p>
                 <ul id="project-tags" class="tag-list">
@@ -26,55 +25,79 @@
 <article class='card'><span>Latency</span><strong>124ms</strong><em>-18ms</em></article>
                 </div>
                 <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>RAG</strong></article><article class='mini-card'><span>Domain</span><strong>Enterprise Knowledge Systems</strong></article><article class='mini-card'><span>Interface</span><strong>FastAPI + Browser UI</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                  <article class='mini-card'><span>Project Type</span><strong>RAG</strong></article><article class='mini-card'><span>Domain</span><strong>Enterprise Knowledge Systems</strong></article><article class='mini-card'><span>Application</span><strong>Grounded Navigator</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
                 </div>
               </div>
             </section>
             <section class="app-grid">
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 01</span>
-                  <h2>Retrieval Inputs</h2>
-                  <p>Use the feature payload to simulate request enrichment or ranking inputs.</p>
-                </div>
-                <textarea id="score-input"></textarea>
-                <div class="button-row">
-                  <button id="run-score">Run Scoring</button>
-                  <button id="load-defaults" class="secondary" type="button">Reload Defaults</button>
-                </div>
-                <pre id="score-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 02</span>
-                  <h2>Retrieval Review</h2>
-                  <p>Compare retrieval metrics or answer quality signals against a baseline.</p>
-                </div>
-                <textarea id="analyze-input"></textarea>
-                <div class="button-row">
-                  <button id="run-analyze">Run Analysis</button>
-                </div>
-                <pre id="analyze-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 03</span>
-                  <h2>Grounded Query</h2>
-                  <p>Run a grounded question across the local knowledge base and inspect contexts.</p>
-                </div>
-                <textarea id="query-input" class="query-input"></textarea>
-                <div class="button-row">
-                  <button id="run-query">Run Query</button>
-                </div>
-                <pre id="query-output"></pre>
-              </article>
+              <article class="panel module js-module span-wide">
+  <div class="module-header">
+    <span>Query 01</span>
+    <h2>Grounded Question</h2>
+    <p>Ask a domain question and retrieve the most relevant context from the local knowledge base.</p>
+  </div>
+  <textarea class="js-input module-input-text">What is the top priority recommendation for Document Intelligence RAG?</textarea>
+  <div class="button-row">
+    <button class="js-run" data-endpoint="/query" data-input-mode="text">Search Context</button>
+  </div>
+  <pre class="js-output">Grounded answer and supporting contexts will appear here.</pre>
+</article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Query 02</span>
+            <h2>Retrieval Quality Review</h2>
+            <p>Compare retrieval-side metrics against a baseline before changing prompt or chunking strategy.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 17.8,
+    &quot;activation&quot;: 24.0,
+    &quot;retention&quot;: 39.6,
+    &quot;revenue&quot;: 55.6
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 16.38,
+    &quot;activation&quot;: 22.08,
+    &quot;retention&quot;: 36.43,
+    &quot;revenue&quot;: 51.15
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Review Quality</button>
+          </div>
+          <pre class="js-output">Quality delta summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Query 03</span>
+            <h2>Response Playbook</h2>
+            <p>Generate a recommended follow-up workflow grounded in the project context.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for Document Intelligence RAG.&quot;,
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;analytics&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 17.8,
+    &quot;activation&quot;: 24.0,
+    &quot;retention&quot;: 39.6,
+    &quot;revenue&quot;: 55.6
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Build Response</button>
+          </div>
+          <pre class="js-output">Recommended workflow steps will appear here.</pre>
+        </article>
             </section>
             <footer class="footer">
-              <span>Data Science + AI + LLM + RAG Portfolio</span>
+              <span>Enterprise Knowledge Systems • RAG • Grounded Navigator</span>
               <span>document-intel-rag</span>
             </footer>
           </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "document-intel-rag", "title": "Document Intelligence RAG", "project_type": "rag", "domain": "Enterprise Knowledge Systems", "summary": "Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.", "tags": ["rag", "search", "knowledge"]}, "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "analytics"}, "sample_metrics": {"acquisition": 17.8, "activation": 24.0, "retention": 39.6, "revenue": 55.6}, "sample_query": "What is the top priority recommendation?", "knowledge_base": ["Document Intelligence RAG is positioned as a Enterprise Knowledge Systems starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on rag, search, knowledge."], "dashboard_metrics": [{"label": "Grounded Recall", "value": "82%", "delta": "+4.6%"}, {"label": "Citation Coverage", "value": "85%", "delta": "+3.1%"}, {"label": "Latency", "value": "124ms", "delta": "-18ms"}]}</script>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "document-intel-rag", "title": "Document Intelligence RAG", "project_type": "rag", "domain": "Enterprise Knowledge Systems", "summary": "Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.", "tags": ["rag", "search", "knowledge"]}, "app_archetype": "navigator", "ui_profile": {"layout": "horizon", "surface": "mist", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 20, "shadow": 50, "eyebrow_style": "solid", "module_columns": 3, "hero_align": "left", "headline_mode": "compact"}, "app_modules": [{"label": "Query 01", "title": "Grounded Question", "description": "Ask a domain question and retrieve the most relevant context from the local knowledge base.", "endpoint": "/query", "input_mode": "text", "cta": "Search Context", "prefill": "What is the top priority recommendation for Document Intelligence RAG?", "hint": "Grounded answer and supporting contexts will appear here.", "span": "wide"}, {"label": "Query 02", "title": "Retrieval Quality Review", "description": "Compare retrieval-side metrics against a baseline before changing prompt or chunking strategy.", "endpoint": "/analyze", "input_mode": "json", "cta": "Review Quality", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 17.8,\n    \"activation\": 24.0,\n    \"retention\": 39.6,\n    \"revenue\": 55.6\n  },\n  \"baseline\": {\n    \"acquisition\": 16.38,\n    \"activation\": 22.08,\n    \"retention\": 36.43,\n    \"revenue\": 51.15\n  }\n}", "hint": "Quality delta summary will appear here.", "span": "normal"}, {"label": "Query 03", "title": "Response Playbook", "description": "Generate a recommended follow-up workflow grounded in the project context.", "endpoint": "/recommend", "input_mode": "json", "cta": "Build Response", "prefill": "{\n  \"prompt\": \"Recommend the next best action for Document Intelligence RAG.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"analytics\"\n  },\n  \"metrics\": {\n    \"acquisition\": 17.8,\n    \"activation\": 24.0,\n    \"retention\": 39.6,\n    \"revenue\": 55.6\n  }\n}", "hint": "Recommended workflow steps will appear here.", "span": "normal"}], "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "analytics"}, "sample_metrics": {"acquisition": 17.8, "activation": 24.0, "retention": 39.6, "revenue": 55.6}, "knowledge_base": ["Document Intelligence RAG is positioned as a Enterprise Knowledge Systems starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on rag, search, knowledge."], "dashboard_metrics": [{"label": "Grounded Recall", "value": "82%", "delta": "+4.6%"}, {"label": "Citation Coverage", "value": "85%", "delta": "+3.1%"}, {"label": "Latency", "value": "124ms", "delta": "-18ms"}]}</script>
           <script src="./app.js"></script>
         </body>
         </html>
