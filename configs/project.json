@@ -1,0 +1,46 @@
+{
+  "slug": "document-intel-rag",
+  "title": "Document Intelligence RAG",
+  "project_type": "rag",
+  "domain": "Enterprise Knowledge Systems",
+  "summary": "Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.",
+  "tags": [
+    "rag",
+    "search",
+    "knowledge"
+  ],
+  "accent": "#e76f51",
+  "dashboard_metrics": [
+    {
+      "label": "Grounded Recall",
+      "value": "82%",
+      "delta": "+4.6%"
+    },
+    {
+      "label": "Citation Coverage",
+      "value": "85%",
+      "delta": "+3.1%"
+    },
+    {
+      "label": "Latency",
+      "value": "124ms",
+      "delta": "-18ms"
+    }
+  ],
+  "sample_features": {
+    "query": "Summarize the highest priority risk and recommended next step.",
+    "audience": "analytics"
+  },
+  "sample_metrics": {
+    "acquisition": 17.8,
+    "activation": 24.0,
+    "retention": 39.6,
+    "revenue": 55.6
+  },
+  "knowledge_base": [
+    "Document Intelligence RAG is positioned as a Enterprise Knowledge Systems starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on rag, search, knowledge."
+  ]
+}

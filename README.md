@@ -1,53 +1,46 @@
+
 # Document Intelligence RAG
 
-## Overview
-Document ingestion and retrieval pipeline with grounded answers and relevance monitoring.
+![Demo Screenshot](demo/screenshot.png)
 
-## What this project demonstrates
-- ML model training, validation, and evaluation.
-- Data pipeline for ingest, cleaning, validation, and feature preparation.
-- Production API with health and metrics endpoints.
-- Monitoring scripts for drift and latency.
-- Deployment artifacts with Docker and compose configuration.
+## Overview
+Ground answers on internal documents with lightweight retrieval, grounded citations, and fast QA demos.
+
+This project is part of a 50-project portfolio covering data science, AI, LLM, RAG, and product analytics use cases across finance, health, retail, cybersecurity, developer tools, and enterprise workflows.
+
+## Project Profile
+- Domain: Enterprise Knowledge Systems
+- Project type: `rag`
+- Tags: rag, search, knowledge
 
 ## Quick Start
-
-1. Create virtual env and install dependencies
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+python scripts/bootstrap_data.py
+uvicorn src.app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-2. Run training
-```bash
-python -m src.training.train
-```
-
-3. Start API
-```bash
-python -m uvicorn src.serving.api:app --reload --host 0.0.0.0 --port 8000
-```
-
-## Endpoints
-- GET /health
-- POST /predict
-- GET /metrics
+## Key Endpoints
+- `GET /health`
+- `GET /project`
+- `POST /score`
+- `POST /analyze`
+- `POST /query`
 
 ## Structure
-```
-.
-├── src/
-│   ├── pipeline/
-│   ├── training/
-│   ├── serving/
-│   └── monitoring/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-├── docs/
-├── tests/
-├── infra/
-└── requirements.txt
+```text
+document-intel-rag/
+|- configs/
+|- data/
+|- demo/
+|- docs/
+|- scripts/
+|- src/app/
+|- tests/
+|- .github/workflows/
+|- Dockerfile
+|- docker-compose.yml
+|- Makefile
 ```
